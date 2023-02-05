@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<div class="text-center">
+   
+    <form asp-controller="Home" asp-action="Index"  method="post">
+     <div class="panel panel-default">
+        <div class="panel-body">ChatGPT Completions In ASP.NET Core Web API</div>
+        <div class="panel-body">
+            <div class="col-sm-9">
+                    <input type="text" name="searchText" value="@ViewBag.Text" class="form-control" autocomplete="off" />
+                </div>
+            <div class="col-sm-3" style="margin-left: -70px;">
+                    <input type="submit" class="btn btn-primary" value="Search Answer" />
+            </div>
+                @if (ViewBag.Answer != null)
+                {
+                    <div class="col-sm-12 mt-5">
+                        @Html.Raw(ViewBag.Answer)
+                    </div>
+                }
+            
+        </div>
+    </div>
+    </form>
+</div>
